@@ -4,4 +4,4 @@ A collection of exercises. The main focus if getting to know the central logic o
 
 ## How to run
 
-`cargo run`
+Why don't you run `cargo doc --open` and find out!
