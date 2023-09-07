@@ -8,5 +8,8 @@
 //! All functions you implement do not error-handling unless specified.
 //! They are only expected to work with respect to the corresponding exercise text file.
 
+#![allow(dead_code)]
+#![forbid(unsafe_code)]
+
 mod exercise1;
 mod parsing;
