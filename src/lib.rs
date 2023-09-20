@@ -22,6 +22,7 @@
 //!     crate::answers::exercisex::some_function_to_implement(thing)
 //! }
 //! ```
+//! For other exercises... just look inside the corresponding answers-module 😃
 
 #![allow(dead_code)]
 #![forbid(unsafe_code)]
