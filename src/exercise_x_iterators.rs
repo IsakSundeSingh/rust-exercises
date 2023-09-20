@@ -1,23 +1,25 @@
+#![allow(unused_variables)]
+
 /// Accepts a vector of the lines in the exercise and returns a vector of integers
 fn convert_to_integers(lines: Vec<String>) -> Vec<u8> {
-    crate::answers::exercise_x_iterators::convert_to_integers(lines)
+    todo!()
 }
 
 /// Accepts a vector of the lines in the exercise and returns their sum
 fn sum_lines(lines: Vec<String>) -> u8 {
-    crate::answers::exercise_x_iterators::sum_lines(lines)
+    todo!()
 }
 
 /// Accepts a vector of the lines in the exercise and returns their sum
 /// # Bonus!
 /// Try implementing this as with [sum_lines], but using a different method than that one!
 fn sum_lines_bonus(lines: Vec<String>) -> u8 {
-    crate::answers::exercise_x_iterators::sum_lines_bonus(lines)
+    todo!()
 }
 
 /// Accepts a vector of the lines in the exercise and returns a vector of the even numbers
 fn keep_evens(lines: Vec<String>) -> Vec<u8> {
-    crate::answers::exercise_x_iterators::keep_evens(lines)
+    todo!()
 }
 
 #[cfg(test)]

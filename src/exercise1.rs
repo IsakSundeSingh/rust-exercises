@@ -1,5 +1,7 @@
+#![allow(unused_variables)]
+
 fn uppercase_owned_string(input: String) -> String {
-    crate::answers::exercise1::uppercase_owned_string(input)
+    todo!()
 }
 
 #[cfg(test)]
