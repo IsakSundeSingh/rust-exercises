@@ -39,5 +39,6 @@
 
 mod answers;
 mod exercise1;
+mod exercise2;
 mod exercise_x_iterators;
 mod parsing;
