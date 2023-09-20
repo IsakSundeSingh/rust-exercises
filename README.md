@@ -1,6 +1,6 @@
 # Exercises
 
-A collection of exercises. The main focus if getting to know the central logic of processing data in Rust at first, then gradually learn more about input, output, transforming data, serialization, etc.
+A collection of exercises. The main focus if getting to know the basics of Rust at first, then gradually learn more about traits, iterators, input, output, transforming data, serialization, etc.
 
 ## How to run
 

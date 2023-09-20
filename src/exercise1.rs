@@ -51,6 +51,47 @@ impl BoringColor {
     }
 }
 
+/// # Bonus
+/// Kind of difficult exercise, so jump to the bottom of the tests and unignore the test if you want to try.
+struct AdvancedColor {
+    color_kind: Color,
+    alpha: u8,
+}
+
+enum Color {
+    Red,
+    Green,
+    Blue,
+    /// For those that don't really like red, green or blue.
+    /// Assume this is constructed with a valid hexadecimal RGB string of 6 characters
+    Custom(String),
+}
+
+impl AdvancedColor {
+    fn opaque_white() -> Self {
+        Self {
+            color_kind: Color::Custom("FFFFFF".into()),
+            alpha: 255,
+        }
+    }
+
+    /// Returns a hex color like [`BoringColor`], without the alpha
+    fn rgb_hex(&self) -> String {
+        todo!()
+    }
+
+    /// Returns a hex color of 8 characters in RGBA format
+    fn rgba_hex(&self) -> String {
+        todo!()
+    }
+
+    /// Whether or not a color is fully transparent or not
+    /// E.g. 0 is fully transparent, everything else is not.
+    fn is_transparent(&self) -> bool {
+        todo!()
+    }
+}
+
 #[cfg(test)]
 mod tests {
     // Star imports are fine when done like this, in my opinion.
@@ -108,5 +149,58 @@ mod tests {
         assert_eq!(BoringColor::Red.hex().to_uppercase(), "FF0000");
         assert_eq!(BoringColor::Green.hex().to_uppercase(), "00FF00");
         assert_eq!(BoringColor::Blue.hex().to_uppercase(), "0000FF");
+    }
+
+    #[test]
+    #[ignore = "Bonus exercise"]
+    fn i_know_photoshop() {
+        assert_eq!(
+            AdvancedColor::opaque_white().rgb_hex().to_lowercase(),
+            String::from("ffffff")
+        );
+        assert_eq!(
+            AdvancedColor::opaque_white().rgba_hex().to_lowercase(),
+            String::from("ffffffff")
+        );
+
+        let transparent_red = AdvancedColor {
+            color_kind: Color::Red,
+            alpha: 0,
+        };
+        assert!(transparent_red.is_transparent());
+
+        let opaque_green = AdvancedColor {
+            color_kind: Color::Green,
+            alpha: 0,
+        };
+        assert!(opaque_green.is_transparent());
+
+        let somewhere_in_between_pink = AdvancedColor {
+            color_kind: Color::Custom("FF00FF".into()),
+            alpha: 127,
+        };
+
+        assert_eq!(
+            somewhere_in_between_pink.rgb_hex().to_lowercase(),
+            String::from("ff00ff")
+        );
+        assert_eq!(
+            somewhere_in_between_pink.rgba_hex().to_lowercase(),
+            String::from("ff00ff7f")
+        );
+
+        let somewhere_in_between_pink = AdvancedColor {
+            color_kind: Color::Custom("FF00FF".into()),
+            alpha: 1,
+        };
+
+        assert_eq!(
+            somewhere_in_between_pink.rgb_hex().to_lowercase(),
+            String::from("ff00ff")
+        );
+        assert_eq!(
+            somewhere_in_between_pink.rgba_hex().to_lowercase(),
+            String::from("ff00ff01")
+        );
     }
 }

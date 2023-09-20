@@ -6,6 +6,8 @@
 //! You can use `cargo test --quiet` or `cargo test -q` to not print every
 //! test case result if you want the output shorter.
 //!
+//! See the bottom of each exercise for tests on how the functions should behave.
+//!
 //! # Note
 //! All functions you implement do not expect error-handling unless specified,
 //! so unwrapping is safe and ok to do (if done as expected ;)).
