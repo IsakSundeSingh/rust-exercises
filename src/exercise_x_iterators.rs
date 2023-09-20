@@ -12,7 +12,7 @@ fn sum_lines(lines: Vec<String>) -> u8 {
 
 /// Accepts a vector of the lines in the exercise and returns their sum
 /// # Bonus!
-/// Try implementing this as with [sum_lines], but using a different method than that one!
+/// Try implementing this as with [`sum_lines`], but using a different method than that one!
 fn sum_lines_bonus(lines: Vec<String>) -> u8 {
     todo!()
 }

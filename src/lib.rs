@@ -8,6 +8,14 @@
 //!
 //! See the bottom of each exercise for tests on how the functions should behave.
 //!
+//! ## Clippy can help! 📎
+//! If you'd like to know if there is something that can be improved with your
+//! code, run clippy!
+//!
+//! Run `cargo clippy -- -D clippy::pedantic` to ask Clippy to be pedantic and
+//! complain about every little thing in your code (and the pre-code
+//! that I'm giving you 😅).
+//!
 //! # Note
 //! All functions you implement do not expect error-handling unless specified,
 //! so unwrapping is safe and ok to do (if done as expected ;)).
