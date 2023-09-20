@@ -6,6 +6,10 @@ pub(crate) fn lowercase_borrowed_string(input: &str) -> String {
     input.to_lowercase()
 }
 
+pub(crate) fn find_largest_in_slice(numbers: &[i32]) -> Option<&i32> {
+    numbers.iter().max()
+}
+
 pub(crate) struct Square {
     length: u32,
 }
