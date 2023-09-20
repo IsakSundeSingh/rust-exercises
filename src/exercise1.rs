@@ -27,6 +27,19 @@ impl Square {
     }
 }
 
+enum BoringColor {
+    Red,
+    Green,
+    Blue,
+}
+
+impl BoringColor {
+    /// Returns the hexadecimal string representation of the value in RGB (6 characters)
+    fn hex(&self) -> String {
+        todo!()
+    }
+}
+
 #[cfg(test)]
 mod tests {
     // Star imports are fine when done like this, in my opinion.
@@ -68,5 +81,12 @@ mod tests {
         assert_eq!(Square::new(2).perimeter(), 8);
         assert_eq!(Square::new(1).perimeter(), 4);
         assert_eq!(Square::new(3).perimeter(), 12);
+    }
+
+    #[test]
+    fn feel_the_graphic_designer_inside_you() {
+        assert_eq!(BoringColor::Red.hex().to_uppercase(), "FF0000");
+        assert_eq!(BoringColor::Green.hex().to_uppercase(), "00FF00");
+        assert_eq!(BoringColor::Blue.hex().to_uppercase(), "0000FF");
     }
 }

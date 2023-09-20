@@ -25,3 +25,20 @@ impl Square {
         self.length * 4
     }
 }
+
+pub(crate) enum BoringColor {
+    Red,
+    Green,
+    Blue,
+}
+
+impl BoringColor {
+    pub(crate) fn hex(&self) -> String {
+        match self {
+            BoringColor::Red => "FF0000",
+            BoringColor::Green => "00FF00",
+            BoringColor::Blue => "0000FF",
+        }
+        .into()
+    }
+}
