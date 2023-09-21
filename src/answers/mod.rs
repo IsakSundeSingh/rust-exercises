@@ -8,4 +8,5 @@
 // Here we make the module public but only within the crate.
 pub(crate) mod exercise1;
 pub(crate) mod exercise2;
+pub(crate) mod exercise3;
 pub(crate) mod exercise_x_iterators;

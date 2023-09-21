@@ -21,6 +21,10 @@
 //! so unwrapping is safe and ok to do (if done as expected ;)).
 //! They are only expected to work with respect to the corresponding exercise text file.
 //!
+//! You might want to remove the lint rules at the top of each file
+//! when you're finished, to see if you've missed anything.
+//! If you remove them at the beginning, you'll just get a bunch of warnings.
+//!
 //! # Cheating
 //! If you'd like to see a possible solution or just make a test pass, there
 //! are solutions for every exercise in the [`answers`]-module.
@@ -40,5 +44,6 @@
 mod answers;
 mod exercise1;
 mod exercise2;
+mod exercise3;
 mod exercise_x_iterators;
 mod parsing;
