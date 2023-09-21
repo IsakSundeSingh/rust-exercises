@@ -56,6 +56,31 @@ fn debug_printable<T: std::fmt::Debug>(t: T) {
     let t = dbg!(t);
 }
 
+// Example trait for a machine that inputs one thing and outputs another,
+// but there may be several outputs for every thing you implement the trait for.
+trait MyMachine {
+    // This is an associated type, the implementor decides what it should be
+    type Output;
+
+    // The associated type can be referenced later
+    fn churn(self) -> Self::Output;
+}
+
+struct Flour;
+
+struct PancakeBatter;
+
+impl MyMachine for Flour {
+    type Output = PancakeBatter;
+    fn churn(self) -> PancakeBatter {
+        PancakeBatter
+    }
+}
+
+// Associated types can be referenced like such                  👇
+// This is an alias for PancakeBatter 👇
+type MachineOutputAliasCanBeReferencedLike = <Flour as MyMachine>::Output;
+
 #[cfg(test)]
 mod tests {
     use super::*;
