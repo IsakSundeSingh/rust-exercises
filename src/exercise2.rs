@@ -9,6 +9,17 @@ fn try_parse_numbers(input: &str) -> Result<i32, std::num::ParseIntError> {
     todo!()
 }
 
+/// This is a function to show you arrays.
+/// Arrays in Rust are similar to slices, but have a fixed, compile-time
+/// determined length encoded into the type itself. This function accepts
+/// an array of [`i32`]s of length 5 exactly, and returns the same type.
+/// It also claims ownership of the array.
+///
+/// Doubles the inputs and returns them.
+fn double_owned_array(numbers: [i32; 5]) -> [i32; 5] {
+    todo!()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -24,5 +35,11 @@ mod tests {
         assert!(try_parse_numbers("2147483648").is_err()); // So is i32::MAX + 1, and we don't really care about the specific errors
         assert!(try_parse_numbers("what").is_err());
         assert!(try_parse_numbers("").is_err()); // Rust does not default to 0 and does not have default values (unless specified)
+    }
+
+    #[test]
+    fn double_trouble_owned() {
+        assert_eq!(double_owned_array([1, 2, 3, 4, 5]), [2, 4, 6, 8, 10]);
+        // assert_eq!(double_owned_array([1, 2, 3, 4]), [2, 4, 6, 8]); // <- compile-error
     }
 }
