@@ -1,5 +1,7 @@
 #![allow(unused_variables)]
 
+use std::cmp::Ordering;
+
 struct Salary(u32);
 
 impl Default for Salary {
@@ -20,6 +22,20 @@ fn t_me<T>() -> T {
 fn duplicate<T>(t: T) -> (T, T) {
     // Hint: maybe we need to know more about T before we can return two? We only have one! If only we had a Clone
     todo!()
+}
+
+/// No one really gets over 255 years old, right?
+/// This is how we can automatically derive trait implementations for types.
+/// In this case we want to compare two ages for equality, and also
+/// compare two ages for who is oldest (or youngest).
+/// Read more about partial and total ordering (and equality) here:
+/// https://doc.rust-lang.org/nightly/std/cmp/trait.PartialOrd.html
+/// There's also `Eq` and `Ord` for total equality and ordering, respectively.
+#[derive(PartialEq, PartialOrd)]
+struct Age(u8);
+
+fn a_is_older_than_b(a: Age, b: Age) -> bool {
+    a > b
 }
 
 #[cfg(test)]
