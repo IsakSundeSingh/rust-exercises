@@ -1,6 +1,6 @@
 #![allow(unused_variables)]
 
-use std::cmp::Ordering;
+// Just a few examples of useful traits
 
 struct Salary(u32);
 
@@ -36,6 +36,24 @@ struct Age(u8);
 
 fn a_is_older_than_b(a: Age, b: Age) -> bool {
     a > b
+}
+
+fn printable<T: std::fmt::Display>(t: T) {
+    // Types that are printable (with a proper representation),
+    // either to the console or just represented as a string,
+    // implement the trait Display
+    let string_representation: String = format!("{t}");
+    println!("{t}")
+}
+
+fn debug_printable<T: std::fmt::Debug>(t: T) {
+    let debug_representation: String = format!("{t:?}");
+    let debug_representation_pretty_printed: String = format!("{t:#?}");
+
+    // The dbg-macro is really useful for cowboy-debugging, ehhem,
+    // it prints the value of the item pretty-printed along with line number
+    // and finally returns the value so it can be used further
+    let t = dbg!(t);
 }
 
 #[cfg(test)]
