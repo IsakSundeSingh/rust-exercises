@@ -37,6 +37,7 @@
 //! }
 //! ```
 //! For other exercises... just look inside the corresponding answers-module 😃
+//! And for others, the functions are just there as examples.
 
 #![allow(dead_code)]
 #![forbid(unsafe_code)]
