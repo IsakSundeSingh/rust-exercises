@@ -81,6 +81,26 @@ impl MyMachine for Flour {
 // This is an alias for PancakeBatter 👇
 type MachineOutputAliasCanBeReferencedLike = <Flour as MyMachine>::Output;
 
+/// Serialization and deserialization is idiomatically done through a
+/// community-driven framework called `serde`.
+/// It is driven by an AST-style core, so if your type can be represented
+/// with this AST, it can be serialized and deserialized into over 20 formats.
+///
+/// The most common way to use it is to derive the corresponding
+/// trait onto your type. This will compile-time generate the trait
+/// implementations necessary to serialize your type. If it is not
+/// possible to serialize your type automatically it will fail to compile.
+#[derive(serde::Serialize)]
+struct Participant {
+    name: String,
+    is_participating: bool,
+    /// Can even serialize weird things, such as a vector of units
+    /// (a zero-sized-type)
+    belongings: Vec<()>,
+    // Though cannot serialize some weird types, such as never/Infallible/!.
+    // does_not_work: Option<std::convert::Infallible>,
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
