@@ -1,0 +1,11 @@
+[
+    {
+        "name": "Albert Einstein",
+        "is_alive": false
+    },
+    {
+        "name": "Jeff Bezos",
+        "is_alive": true,
+        "is_bald": true
+    }
+]

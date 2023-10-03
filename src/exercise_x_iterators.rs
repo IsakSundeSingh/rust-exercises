@@ -29,7 +29,7 @@ mod tests {
     use super::*;
 
     fn lines() -> Vec<String> {
-        crate::parsing::read_lines(Path::new("inputs/exercise_1.txt")).collect()
+        crate::parsing::read_lines(Path::new("inputs/number_inputs.txt")).collect()
     }
 
     #[test]
