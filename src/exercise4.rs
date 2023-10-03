@@ -1,3 +1,5 @@
+#![allow(unused_variables)]
+
 #[derive(serde::Deserialize, PartialEq, Debug)]
 struct ParsedPerson {
     // TODO: define me
