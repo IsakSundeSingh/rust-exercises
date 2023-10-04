@@ -37,7 +37,6 @@ enum HairStyle {
 // From and Into are traits to convert to and from things
 // and implementing From gives a blanket implementation to Into
 // which goes the other way around!
-
 impl From<ParsedPerson> for Person {
     fn from(person: ParsedPerson) -> Self {
         Person {

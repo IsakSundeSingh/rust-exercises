@@ -10,4 +10,4 @@ pub(crate) mod exercise1;
 pub(crate) mod exercise2;
 pub(crate) mod exercise3;
 pub(crate) mod exercise4;
-pub(crate) mod exercise_x_iterators;
+pub(crate) mod exercise5;
