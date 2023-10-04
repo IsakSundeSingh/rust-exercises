@@ -33,6 +33,50 @@ trait MyIterator {
     }
 }
 
+/// 👇 this is how you say an impl block is generic over a type
+impl<T> MyIterator for Option<T> {
+    type Item = T;
+
+    fn next(&mut self) -> Option<T> {
+        // Don't worry too much about this implementation, it simply changes the &mut self reference to `None` and returns the thing &mut self originally pointed to as an owned value
+        std::mem::take(self)
+    }
+}
+
+/// A function that accepts a generic type parameter that implements MyIterator
+fn generic_over_t_with_bound_shorthand<T: MyIterator>(t: T) {}
+
+/// A function that accepts a generic type parameter that implements MyIterator using a where clause is the same as the above
+fn generic_over_t_with_bound_where_clause<T>(t: T)
+where
+    T: MyIterator,
+{
+}
+
+/// A function that accepts an argument that implements [`MyIterator`], but it only knows that about the argument.
+/// It does not know it's type and is dissimilar to the function above, but in practice is the same.
+fn function_accepts_only_something_that_impls_my_iterator(t: impl MyIterator) {}
+
+/// A function that returns a generic type parameter that implements MyIterator.
+/// This is a really weird function if you think about it because it has to
+/// return a generic type that the caller knows, but it itself doesn't know
+/// about the type, so it can't really return it?
+/// Don't worry too much about it, just showing some syntax around traits here.
+fn function_that_returns_generic_type<T: MyIterator>() -> T {
+    unimplemented!("Deliberately unimplemented, don't try to implement this")
+}
+
+/// A function that accepts a generic type parameter that implements MyIterator
+fn function_that_returns_something_that_impls_my_iterator<Whatever>(
+) -> impl MyIterator<Item = Whatever> {
+    // Hehe just wrote this to make it compile,
+    // don't worry about it if you think it's difficult,
+    // or think about it if you want to know,
+    // or just ask me 😅
+    None
+}
+
+/// Collect is a super useful method on iterators
 /// If you have a list of [`Result<T, E>`][`Result`]s, you can use `collect()` to
 /// see if any of them failed:
 ///
