@@ -29,7 +29,7 @@ fn duplicate<T>(t: T) -> (T, T) {
 /// In this case we want to compare two ages for equality, and also
 /// compare two ages for who is oldest (or youngest).
 /// Read more about partial and total ordering (and equality) here:
-/// https://doc.rust-lang.org/nightly/std/cmp/trait.PartialOrd.html
+/// <https://doc.rust-lang.org/nightly/std/cmp/trait.PartialOrd.html>
 /// There's also `Eq` and `Ord` for total equality and ordering, respectively.
 #[derive(PartialEq, PartialOrd)]
 struct Age(u8);
@@ -43,7 +43,7 @@ fn printable<T: std::fmt::Display>(t: T) {
     // either to the console or just represented as a string,
     // implement the trait Display
     let string_representation: String = format!("{t}");
-    println!("{t}")
+    println!("{t}");
 }
 
 fn debug_printable<T: std::fmt::Debug>(t: T) {
