@@ -20,6 +20,9 @@ pub(crate) fn double_owned_array(numbers: [i32; 5]) -> [i32; 5] {
 
     // Returning the mutated value again, giving away ownership
     numbers
+
+    // Or we could simply replace the entire function with:
+    // numbers.map(|x| x * 2)
 }
 
 /// This is a struct that has an anonymous field (`0`).
