@@ -1,3 +1,7 @@
+//! In this module, try to look up serde and how to use it.
+//! Fill in the required fields for the ParsedPerson to make it compile.
+//!
+//! Check out [people_inputs.json](../inputs/people_inputs.json) for details.
 #![allow(unused_variables)]
 
 #[derive(serde::Deserialize, PartialEq, Debug)]

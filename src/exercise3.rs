@@ -15,7 +15,7 @@ impl Default for Salary {
 
 fn t_me<T>() -> T {
     // Hint: maybe we need to know more about T before we can return one?
-    todo!()
+    todo!("Implement me by changing what we know about T. Perhaps there is some default behavior?")
 }
 
 /// Not really a duplicator, but it gives you another default value!
@@ -66,20 +66,20 @@ trait MyMachine {
     fn churn(self) -> Self::Output;
 }
 
-struct Flour;
+struct Cream;
 
-struct PancakeBatter;
+struct Butter;
 
-impl MyMachine for Flour {
-    type Output = PancakeBatter;
-    fn churn(self) -> PancakeBatter {
-        PancakeBatter
+impl MyMachine for Cream {
+    type Output = Butter;
+    fn churn(self) -> Butter {
+        Butter
     }
 }
 
 // Associated types can be referenced like such                  👇
-// This is an alias for PancakeBatter 👇
-type MachineOutputAliasCanBeReferencedLike = <Flour as MyMachine>::Output;
+// This is an alias for Butter 👇
+type MachineOutputAliasCanBeReferencedLike = <Cream as MyMachine>::Output;
 
 /// Serialization and deserialization is idiomatically done through a
 /// community-driven framework called `serde`.
